@@ -2,6 +2,7 @@ use actix_web::error::{self};
 use actix_web::{App, HttpServer, Responder, put, web};
 
 use chrono::{DateTime, Utc};
+use dotenv::dotenv;
 use rust_web_play::error::Error;
 use serde::{Deserialize, Serialize};
 use std::env;
@@ -84,6 +85,8 @@ async fn index() -> impl Responder {
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
+    dotenv().ok();
+    
     let db = connect().await?;
     let state = web::Data::new(AppState { db });
 

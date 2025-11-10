@@ -7,6 +7,7 @@ edition = "2024"
 actix-web = "4.9.0"
 anyhow = { version = "1.0.100", features = ["backtrace"] }
 chrono = "0.4.42"
+dotenv = "0.15.0"
 faker_rand = "0.1.1"
 rand = "0.8.5"
 serde = { version = "1.0.209", features = ["derive"] }
